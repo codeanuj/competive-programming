@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       int cases = Integer.parseInt(br.readLine());
+
+       //Initial Position
+       int Apos=0;
+       int Bpos =7;
+
+       for(int i=0; i<cases;i++){
+           
+           int floorCall = Integer.parseInt(br.readLine());
+           int diffWithA = Math.abs(Apos-floorCall);
+           int diffWithB = Math.abs(Bpos-floorCall);
+            if(diffWithA <=diffWithB){
+               Apos=floorCall;
+               System.out.println("A");
+            }else{
+               Bpos=floorCall;
+               System.out.println("B");
+            }
+       }
+
+    }
+}
